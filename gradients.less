@@ -2,7 +2,19 @@
 // Градиенты
 // --------------------------------------------------
 
-.gradient(@color1, @color2, @orientation: 'top'){
+// Градиент из одного цвета
+.gradient (@color) when (lightness(@color) >= 50%) {
+  .gradient(@color,darken(@color,15%));
+}
+
+.gradient (@color) when (lightness(@color) < 50%) {
+   .gradient(lighten(@color,15%),@color);
+}
+
+
+
+
+.gradient(@color1, @color2, @orientation: top){
 	.linear-gradient(@orientation,@color1,@color2);
 }
 
@@ -13,4 +25,4 @@
 	background:     -ms-linear-gradient(@dir, @start-color 0%, @end-color 100%);
 	background:      -o-linear-gradient(@dir, @start-color 0%, @end-color 100%);
 	background:         linear-gradient(@dir, @start-color 0%, @end-color 100%);
-}
+	}

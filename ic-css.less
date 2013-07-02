@@ -1,20 +1,7 @@
 // Глобальный namespace для всех стилей #ic сделан для того чтобы не переписывать все остальные возмножные фреймворки и mixins
  
 #ic{
+	@import "css3.less"; 
 	@import "gradients.less";
-
-	.button(){
-		color:red;
-	}
-} 
-// Тестирование
-
-.button(){
-color:blue;
+	@import "tables.less";
 }
-
-.class-test{
-.button;
-#ic.gradient(red,blue);
-}
-
