@@ -1,0 +1,38 @@
+
+// FONTS
+// --------------------------------------------------
+@baseLineHeight=100%;
+@baseTextShadow=none;
+#font {
+  #family {
+    .serif() {
+      font-family: @serifFontFamily;
+    }
+    .sans-serif() {
+      font-family: @sansFontFamily;
+    }
+    .monospace() {
+      font-family: @monoFontFamily;
+    }
+  }
+  .shorthand(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight, @textShadow: @baseTextShadow) {
+    font-size: @size;
+    font-weight: @weight;
+    line-height: @lineHeight;
+  text-shadow: @textShadow;
+  }
+  .serif(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight, @textShadow: @baseTextShadow) {
+    #font > #family > .serif;
+    #font > .shorthand(@size, @weight, @lineHeight);
+  }
+  .sans-serif(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight, @textShadow: @baseTextShadow) {
+    #font > #family > .sans-serif;
+    #font > .shorthand(@size, @weight, @lineHeight);
+  }
+  .monospace(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight, @textShadow: @baseTextShadow) {
+    #font > #family > .monospace;
+    #font > .shorthand(@size, @weight, @lineHeight, @textShadow);
+  }
+}
+
+
